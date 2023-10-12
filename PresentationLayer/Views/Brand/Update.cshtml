@@ -1,0 +1,16 @@
+﻿@model EntityLayer.Concrete.Brand
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Mark Güncelleme</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="BrandId" />
+    <label>Marka Adı</label>
+    <input type="text" asp-for="BrandName" class="form-control" style="border 1px solid #2222"/>
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+

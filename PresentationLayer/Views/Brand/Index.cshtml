@@ -1,32 +1,29 @@
 ﻿@model List<EntityLayer.Concrete.Brand>
 
 @{
-
+    Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Marka Adı</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
 
-<div class="container">
-    <br /><br />
-    <table class="table table-bordered">
+    @foreach (var item in Model)
+    {
         <tr>
-            <th>#</th>
-            <th>Marka Adı</th>
-            <th>Durum</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
+            <td>@item.BrandId</td>
+            <td>@item.BrandName</td>
+            <td>@item.Status</td>
+            <td><a href="/Brand/Brand/@item.BrandId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Brand/Update/@item.BrandId" class="btn btn-success">Güncelle</a></td>
         </tr>
-        
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.BrandId</td>
-                <td>@item.BrandName</td>
-                <td>@item.Status</td>
-                <td><a href="#" class="btn btn-danger">Sil</a></td>
-                <td><a href="#" class="btn btn-success">Güncelle</a></td>
-            </tr>
-        }
-
-    </table>
-</div>
+    }
+</table>
+<a href="#" class="btn btn-primary">Yeni Marka Girişi</a>
