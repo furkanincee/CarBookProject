@@ -1,6 +1,17 @@
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<CarBookContext>();
+builder.Services.AddScoped<IBrandDal, EfBrandDal>();
+builder.Services.AddScoped<ICarCategoryDal, EfCarCategoryDal>();
+builder.Services.AddScoped<ICarDal, EfCarDal>();
+builder.Services.AddScoped<ICarStatusDal, EfCarStatusDal>();
+builder.Services.AddScoped<ILocationDal, EfLocationDal>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
