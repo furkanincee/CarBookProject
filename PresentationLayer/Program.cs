@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<CarBookContext>();
 
+//AddScoped Uygulama ayaða kalktýðý zaman nesneden bir örnek oluþturur ve onu kullanýr
 builder.Services.AddScoped<IBrandDal, EfBrandDal>();
 builder.Services.AddScoped<IBrandService, BrandManager>();
 
@@ -24,6 +25,9 @@ builder.Services.AddScoped<ICarStatusService, CarStatusManager>();
 
 builder.Services.AddScoped<ILocationDal, EfLocationDal>();
 builder.Services.AddScoped<ILocationService, LocationManager>();
+
+builder.Services.AddScoped<IPriceDal, EfPriceDal>();
+builder.Services.AddScoped<IPriceService, PriceManager>();
 
 builder.Services.AddControllersWithViews();
 

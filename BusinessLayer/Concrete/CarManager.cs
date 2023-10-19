@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
             _carDal.Delete(entity);
         }
 
+        public List<Car> GetAllCarsWithBrands()
+        {
+            return _carDal.GetAllCarsWithBrands();
+        }
+
         public Car GetbyId(int id)
         {
            return _carDal.GetById(id);

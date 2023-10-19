@@ -32,6 +32,11 @@ namespace BusinessLayer.Concrete
         {
             return _priceDal.GetAll();
         }
+        
+        public List<Price> GetPricesWithCars()
+        {
+            return _priceDal.GetPricesWithCars();
+        }
 
         public void Insert(Price entity)
         {

@@ -13,6 +13,11 @@ namespace BusinessLayer.Concrete
     {
         private readonly ICarStatusDal _carStatusDal;
 
+        public CarStatusManager(ICarStatusDal carStatusDal)
+        {
+            _carStatusDal = carStatusDal;  
+        }
+
         public void Delete(CarStatus entity)
         {
             _carStatusDal.Delete(entity);

@@ -9,5 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IPriceService:IGenericService<Price>
     {
+        public List<Price> GetPricesWithCars();
     }
 }
