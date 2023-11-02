@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class CarBookContext : DbContext
+    public class CarBookContext : IdentityDbContext<AppUser,AppRole,int> // tabloların prksı string olarak geliyor burada keye int vererek değiştiriyoruz int gelsin diye.
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
