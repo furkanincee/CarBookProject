@@ -34,7 +34,11 @@ builder.Services.AddScoped<IPriceService, PriceManager>();
 builder.Services.AddScoped<IServiceDal, EfServiceDal>();
 builder.Services.AddScoped<IServiceService, ServiceManager>();
 
+builder.Services.AddScoped<IHowItWorksStepDal, EfIHowItWorksStepDal>();
+builder.Services.AddScoped<IHowItWorksStepService, HowItWorksStepManager>();
+
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<CarBookContext>().AddErrorDescriber<CustomIdentityValidator>();  
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

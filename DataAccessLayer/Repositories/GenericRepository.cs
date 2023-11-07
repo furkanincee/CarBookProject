@@ -10,7 +10,7 @@ namespace DataAccessLayer.Repositories
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        CarBookContext _ctx;
+        protected CarBookContext _ctx;
         public GenericRepository(/*CarBookContext ctx*/)
         {
             //_ctx = ctx;

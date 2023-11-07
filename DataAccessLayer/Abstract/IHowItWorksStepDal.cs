@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Abstract
+namespace DataAccessLayer.Abstract
 {
-    public interface ICarCategoryService:IGenericService<CarCategory>
+    public interface IHowItWorksStepDal : IGenericDal<HowItWorksStep>
     {
-        void GetCategoriesWithCarCount();
     }
 }

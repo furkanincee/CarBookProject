@@ -1,4 +1,5 @@
-﻿using EntityLayer.Concrete;
+﻿using DataAccessLayer.Abstract;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,5 +24,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Location> Locations { get; set; }
         public DbSet<Price> Prices { get; set; } 
         public DbSet<Service> Services { get; set; } 
+        public DbSet<HowItWorksStep> HowItWorksSteps { get; set; } 
+        public DbSet<CarDetail> CarDetails { get; set; } 
     }
 }

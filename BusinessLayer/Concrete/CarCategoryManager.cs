@@ -41,5 +41,10 @@ namespace BusinessLayer.Concrete
         {
             _carCategoryDal.Update(entity);
         }
+
+        public void GetCategoriesWithCarCount()
+        {
+            _carCategoryDal.GetCategoriesWithCarCount();
+        }
     }
 }

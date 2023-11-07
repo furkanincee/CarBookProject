@@ -11,5 +11,17 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfCarCategoryDal : GenericRepository<CarCategory>, ICarCategoryDal
     {
+        public Dictionary<string, int> GetCategoriesWithCarCount()
+        {
+            var categoryCounts = _ctx.CarCategories
+                        .Select(category => new
+                        {
+                            CategoryName = category.CategoryName,
+                            CarCount = _ctx.Cars.Count(car => car.CarCategoryId == category.CarCategoryId)
+                        }).ToList();
+
+            return new Dictionary<string, int>();
+        }
+
     }
 }

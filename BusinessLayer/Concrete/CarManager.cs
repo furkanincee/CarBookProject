@@ -13,6 +13,10 @@ namespace BusinessLayer.Concrete
     {
         private readonly ICarDal _carDal;
 
+        public CarManager(ICarDal carDal)
+        {
+            _carDal = carDal;   
+        }
         public void Delete(Car entity)
         {
             _carDal.Delete(entity);

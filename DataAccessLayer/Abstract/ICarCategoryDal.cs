@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
     public interface ICarCategoryDal : IGenericDal<CarCategory>
     {
+        Dictionary<string, int> GetCategoriesWithCarCount();
     }
 }

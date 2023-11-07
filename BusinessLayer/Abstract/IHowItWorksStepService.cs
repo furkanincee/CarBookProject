@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface ICarCategoryService:IGenericService<CarCategory>
+    public interface IHowItWorksStepService : IGenericService<HowItWorksStep>
     {
-        void GetCategoriesWithCarCount();
     }
 }
