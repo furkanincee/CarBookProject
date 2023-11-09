@@ -1,0 +1,13 @@
+﻿@model List<Comment>
+
+<h3 class="mb-5">@Model.Count</h3>
+<ul class="comment-list">
+    @foreach (var item in Model)
+    {
+        <li class="comment">
+            <div class="vcard bio">
+                <img src="">
+            </div>
+        </li>
+    }
+</ul>

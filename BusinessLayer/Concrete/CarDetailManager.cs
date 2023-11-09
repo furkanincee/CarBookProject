@@ -45,5 +45,10 @@ namespace BusinessLayer.Concrete
         {
             _carDetailDal.Update(entity);
         }
+
+        public CarDetail GetCarDetailWithAuthor(int id)
+        {
+            return _carDetailDal.GetCarDetailWithAuthor(id);
+        }
     }
 }

@@ -2,7 +2,7 @@
 using DataAccessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
 
-namespace PresentationLayer.ViewComponents.UILayout
+namespace PresentationLayer.ViewComponents.CarDetailComponents
 {
     public class _CarDetailCategoryComponentPartial : ViewComponent
     {

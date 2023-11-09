@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface ICarDetailService : IGenericService<CarDetail>
+    public interface ICommentService : IGenericService<Comment>
     {
-        CarDetail GetCarDetailByCarId(int id);
-        CarDetail GetCarDetailWithAuthor(int id);
+        List<Comment> GetCommentsByCar(int carId);
     }
 }

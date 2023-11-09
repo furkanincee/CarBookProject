@@ -1,0 +1,30 @@
+﻿@model List<Service>
+
+@{
+    ViewData["Title"] = "ServiceList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h1>Hizmet Listesi</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Hizmet Başlığı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Title</td>
+            <td><a asp-action="DeleteService" asp-controller="Service" asp-route-id="@item.ServiceId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a asp-action="DeleteService" asp-controller="Service" asp-route-id="@item.ServiceId" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a asp-action="CreateService" asp-controller="Service" class="btn btn-outline-primary">Hizmet Ekle</a>
+
+
