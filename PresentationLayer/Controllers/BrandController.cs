@@ -51,5 +51,18 @@ namespace PresentationLayer.Controllers
             _brandService.Delete(_brandService.GetbyId(id));
             return RedirectToAction("Index");
         }
+
+        public IActionResult GetBrandSearchByName(string name)
+        {
+            ViewData["CurrentFilter"] = name;
+            var values = from x in _brandService.GetListAll() select x;
+
+            if (!string.IsNullOrEmpty(name))
+            {
+                values = values.Where(y=>y.BrandName.Contains(name));
+            }
+
+            return View();
+        }
     }
 }
